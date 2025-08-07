@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login / Cadastro</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="background"></div>
+
+  <div class="flip-card" id="flip-card">
+    <div class="flip-inner">
+      <!-- Tela de Login -->
+      <div class="flip-front">
+        <h2>Entrar</h2>
+        <input type="email" placeholder="Email" />
+        <input type="password" placeholder="Senha" />
+        <button>Login</button>
+        <p>Não tem conta? <span class="toggle" id="toRegister">Cadastre-se</span></p>
+      </div>
+
+      <!-- Tela de Cadastro -->
+      <div class="flip-back">
+        <h2>Cadastrar</h2>
+        <input type="text" placeholder="Nome completo" />
+        <input type="email" placeholder="Email" />
+        <input type="password" placeholder="Senha" />
+        <button>Cadastrar</button>
+        <p>Já tem conta? <span class="toggle" id="toLogin">Entrar</span></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: black;
+  position: relative;
+}
+
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #ff0040, #00ffe5, #002bff, #ff00f2);
+  background-size: 600% 600%;
+  animation: neonBG 10s ease infinite;
+  z-index: 0;
+  filter: blur(60px);
+  opacity: 0.3;
+}
+
+@keyframes neonBG {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+.flip-card {
+  width: 100%;
+  max-width: 400px;
+  height: 100%;
+  max-height: 520px;
+  padding: 20px;
+  perspective: 1000px;
+  z-index: 2;
+}
+
+.flip-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.8s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+.flip-card.flipped .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-front, .flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(30, 30, 30, 0.95);
+  color: white;
+  border-radius: 20px;
+  padding: 40px 30px;
+  backface-visibility: hidden;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.flip-front h2, .flip-back h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.flip-front input, .flip-back input {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 10px;
+  background: #1e1e1e;
+  color: white;
+}
+
+.flip-front button, .flip-back button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  background: #00ffe5;
+  border: none;
+  border-radius: 10px;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.flip-front button:hover, .flip-back button:hover {
+  background: #00bfa3;
+}
+
+.toggle {
+  color: #00ffe5;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.flip-back {
+  transform: rotateY(180deg);
+}
